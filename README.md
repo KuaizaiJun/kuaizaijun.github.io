@@ -149,6 +149,22 @@ Date:   Tue Jan 19 19:59:25 2021 +0800
     add study
 ```
 
+```bash
+kzj@linux:~/Github/kuaizaijun.github.io$ git log --pretty=oneline --abbrev-commit 
+53ff0f4 (HEAD -> master) add tag
+e92a402 (tag: tag, tag: branch, tag: a.branch, origin/master, origin/HEAD) add saved
+6900ef3 add something
+ff52b67 add some
+4caa384 Update index.html
+b600205 Update index.html
+c6925ff Delete book.png
+c2f09ce Update index.html
+97aed91 Update index.html
+a52662b Add files via upload
+f7b7908 Delete img
+e0968a1 Update index.html
+```
+
 >创建文件和删除文件
 
 
@@ -243,8 +259,34 @@ Git鼓励大量使用分支：
 
 一定要保存本地文件，才能添加到暂存区
 
->添加标签
+>新建、删除标签
 
 ```bash
 kzj@linux:~/Github/kuaizaijun.github.io$ git tag a.branch
+kzj@linux:~/Github/kuaizaijun.github.io$ git tag -d tag branch 
+已删除标签 'tag'（曾为 e92a402）
+已删除标签 'branch'（曾为 e92a402）
+kzj@linux:~/Github/kuaizaijun.github.io$ git push origin :refs/tags/tag
+remote: warning: Deleting a non-existent ref.
+To github.com:KuaizaiJun/kuaizaijun.github.io.git
+ - [deleted]         tag
 ```
+
+>用标签查看版本信息
+
+```bash
+zj@linux:~/Github/kuaizaijun.github.io$ git show a.branch 
+commit e92a4021720aa029b49978da1b217d09cde68821 (tag: tag, tag: branch, tag: a.branch)
+Author: kuaizaijun <kuaizaijun@qq.com>
+Date:   Tue Jan 19 21:23:06 2021 +0800
+
+    add saved
+
+diff --git a/README.md b/README.md
+index 050d11e..b5b18ca 100644
+--- a/README.md
++++ b/README.md
+@@ -187,3 +187,58 @@ kzj@linux:~/Github$ git commit -m "remove test.md"
+  delete mode 100644 kuaizaijun.github.io/test.md
+```
+
