@@ -187,3 +187,58 @@ kzj@linux:~/Github$ git commit -m "remove test.md"
  delete mode 100644 kuaizaijun.github.io/test.md
  ```
 
+>把本地库关联到远程库
+
+```bash
+git remote add origin git@github.com:KuaizaiJun/learnc.git
+```
+
+>下一步，把本地库推送到远程库上
+
+```bash
+kzj@linux:~/Github/kuaizaijun.github.io$ git push -u origin master 
+枚举对象: 7, 完成.
+对象计数中: 100% (7/7), 完成.
+使用 8 个线程进行压缩
+压缩对象中: 100% (6/6), 完成.
+写入对象中: 100% (6/6), 2.79 KiB | 2.79 MiB/s, 完成.
+总共 6 （差异 1），复用 0 （差异 0）
+remote: Resolving deltas: 100% (1/1), done.
+To github.com:KuaizaiJun/kuaizaijun.github.io.git
+   4caa384..6900ef3  master -> master
+```
+
+提送成功后github页面就和本地目录一模一样了
+
+>从远程库克隆到本地库
+
+```bash
+kzj@linux:~/Github$ git clone git@github.com:KuaizaiJun/kuaizaijun.github.io.git
+正克隆到 'kuaizaijun.github.io'...
+remote: Enumerating objects: 88, done.
+remote: Total 88 (delta 0), reused 0 (delta 0), pack-reused 88
+接收对象中: 100% (88/88), 3.67 MiB | 2.09 MiB/s, 完成.
+处理 delta 中: 100% (20/20), 完成.
+```
+
+>创建分支，日后再学
+
+```bash
+https://www.liaoxuefeng.com/wiki/896043488029600/900003767775424
+
+Git鼓励大量使用分支：
+
+查看分支：git branch
+
+创建分支：git branch <name>
+
+切换分支：git checkout <name>或者git switch <name>
+
+创建+切换分支：git checkout -b <name>或者git switch -c <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+```
+
+一定要保存本地文件再添加到暂存区
