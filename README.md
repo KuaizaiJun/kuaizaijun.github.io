@@ -23,7 +23,7 @@ ssh-add -D
 rm -r ~/.ssh
 ```
 
->然后重新生成ssh密钥对
+>然后重新生成ssh密钥对(在上一个目录！！),一路回车
 
 ```bash
 ssh-keygen -t rsa -C "kuaizaijun@qq.com"
@@ -148,4 +148,42 @@ Date:   Tue Jan 19 19:59:25 2021 +0800
 
     add study
 ```
+
+>创建文件和删除文件
+
+
+```bash
+kzj@linux:~/Github$ touch kuaizaijun.github.io/test.md
+kzj@linux:~/Github$ git add kuaizaijun.github.io/test.md 
+kzj@linux:~/Github$ git commit -m "touch test.md"
+[master 1a61b7a] touch test.md
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 kuaizaijun.github.io/test.md
+kzj@linux:~/Github$ rm kuaizaijun.github.io/test.md 
+kzj@linux:~/Github$ git status 
+位于分支 master
+尚未暂存以备提交的变更：
+  （使用 "git add/rm <文件>..." 更新要提交的内容）
+  （使用 "git checkout -- <文件>..." 丢弃工作区的改动）
+
+        修改：     kuaizaijun.github.io/README.md
+        删除：     kuaizaijun.github.io/test.md
+
+未跟踪的文件:
+  （使用 "git add <文件>..." 以包含要提交的内容）
+
+        Notes/
+        TangMisaka23001.github.io/
+        learnc/
+        lsuplusclub/
+        zhuzhenyuan.github.io/
+
+修改尚未加入提交（使用 "git add" 和/或 "git commit -a"）
+kzj@linux:~/Github$ git rm kuaizaijun.github.io/test.md
+rm 'kuaizaijun.github.io/test.md'
+kzj@linux:~/Github$ git commit -m "remove test.md"
+[master 36d20c3] remove test.md
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 kuaizaijun.github.io/test.md
+ ```
 
