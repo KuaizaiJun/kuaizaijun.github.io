@@ -266,10 +266,6 @@ kzj@linux:~/Github/kuaizaijun.github.io$ git tag a.branch
 kzj@linux:~/Github/kuaizaijun.github.io$ git tag -d tag branch 
 已删除标签 'tag'（曾为 e92a402）
 已删除标签 'branch'（曾为 e92a402）
-kzj@linux:~/Github/kuaizaijun.github.io$ git push origin :refs/tags/tag
-remote: warning: Deleting a non-existent ref.
-To github.com:KuaizaiJun/kuaizaijun.github.io.git
- - [deleted]         tag
 ```
 
 >用标签查看版本信息
@@ -290,3 +286,20 @@ index 050d11e..b5b18ca 100644
   delete mode 100644 kuaizaijun.github.io/test.md
 ```
 
+>推送标签、删除远程标签
+
+```bash
+kzj@linux:~/Github/kuaizaijun.github.io$ git push origin --tags 
+总共 0 （差异 0），复用 0 （差异 0）
+To github.com:KuaizaiJun/kuaizaijun.github.io.git
+ * [new tag]         a.branch -> a.branch
+kzj@linux:~/Github/kuaizaijun.github.io$ git push origin :refs/tags/tag
+remote: warning: Deleting a non-existent ref.
+To github.com:KuaizaiJun/kuaizaijun.github.io.git
+ - [deleted]         tag
+```
+在GitHub上，可以任意Fork开源仓库；
+
+自己拥有Fork后的仓库的读写权限；
+
+可以推送pull request给官方仓库来贡献代码。
