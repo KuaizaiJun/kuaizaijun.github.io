@@ -241,4 +241,10 @@ Git鼓励大量使用分支：
 删除分支：git branch -d <name>
 ```
 
-一定要保存本地文件再添加到暂存区
+一定要保存本地文件，才能添加到暂存区
+
+>添加标签
+
+```bash
+kzj@linux:~/Github/kuaizaijun.github.io$ git tag a.branch
+```
