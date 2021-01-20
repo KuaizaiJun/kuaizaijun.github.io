@@ -10,7 +10,7 @@
 
 >git报错
 
-```bash
+```bashsudo apt-get remove --purge nodejs-legacy
 git@github.com: Permission denied (publickey).
 ```
 
@@ -35,9 +35,13 @@ ssh-keygen -t rsa -C "kuaizaijun@qq.com"
 
 >最后在终端进行测试(通过)
 
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
 ```bash
 kzj@linux:~/Github$ ssh -T git@github.com
-Warning: Permanently added the RSA host key for IP address '13.229.188.59' to the list of known hosts.
+Warning: Permanently added the RSA host key for IP address '13.229.188.59' to the list of known hosts
+<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
+
 Hi KuaizaiJun! Youve successfully authenticated, but GitHub does not provide shell access.
 ```
 
@@ -65,7 +69,7 @@ remote: Total 2704 (delta 234), reused 548 (delta 211), pack-reused 2131
 >初始化，初通过git init命令把这个目录变成Git可以管理的仓库
 
 ```bash
-kzj@linux:~/Github$ git init 
+kzj@linux:~/Github$ git init
 已初始化空的 Git 仓库于 /home/kzj/Github/.git/
 ```
 
@@ -94,7 +98,7 @@ kzj@linux:~/Github$ git commit -m "add study"
 > git status命令可以让我们时刻掌握仓库当前的状态
 
 ```bash
-zj@linux:~/Github$ git status 
+zj@linux:~/Github$ git status
 位于分支 master
 尚未暂存以备提交的变更：
   （使用 "git add <文件>..." 更新要提交的内容）
@@ -124,10 +128,10 @@ index a8cb4eb..a6bdb0e 100644
 +++ b/kuaizaijun.github.io/README.md
 @@ -72,10 +72,44 @@ kzj@linux:~/Github$ git init
  >用命令git add告诉Git，把文件添加到仓库(暂存区)
- 
+
  ```bash
 -kzj@linux:~/Github$ cd kuaizaijun.github.io/
--kzj@linux:~/Github/kuaizaijun.github.io$ git add README.md 
+-kzj@linux:~/Github/kuaizaijun.github.io$ git add README.md
 +kzj@linux:~/Github$ git add kuaizaijun.github.io/
 :q
 ```
@@ -150,7 +154,7 @@ Date:   Tue Jan 19 19:59:25 2021 +0800
 ```
 
 ```bash
-kzj@linux:~/Github/kuaizaijun.github.io$ git log --pretty=oneline --abbrev-commit 
+kzj@linux:~/Github/kuaizaijun.github.io$ git log --pretty=oneline --abbrev-commit
 53ff0f4 (HEAD -> master) add tag
 e92a402 (tag: tag, tag: branch, tag: a.branch, origin/master, origin/HEAD) add saved
 6900ef3 add something
@@ -170,13 +174,13 @@ e0968a1 Update index.html
 
 ```bash
 kzj@linux:~/Github$ touch kuaizaijun.github.io/test.md
-kzj@linux:~/Github$ git add kuaizaijun.github.io/test.md 
+kzj@linux:~/Github$ git add kuaizaijun.github.io/test.md
 kzj@linux:~/Github$ git commit -m "touch test.md"
 [master 1a61b7a] touch test.md
  1 file changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 kuaizaijun.github.io/test.md
-kzj@linux:~/Github$ rm kuaizaijun.github.io/test.md 
-kzj@linux:~/Github$ git status 
+kzj@linux:~/Github$ rm kuaizaijun.github.io/test.md
+kzj@linux:~/Github$ git status
 位于分支 master
 尚未暂存以备提交的变更：
   （使用 "git add/rm <文件>..." 更新要提交的内容）
@@ -212,7 +216,7 @@ git remote add origin git@github.com:KuaizaiJun/learnc.git
 >下一步，把本地库推送到远程库上
 
 ```bash
-kzj@linux:~/Github/kuaizaijun.github.io$ git push -u origin master 
+kzj@linux:~/Github/kuaizaijun.github.io$ git push -u origin master
 枚举对象: 7, 完成.
 对象计数中: 100% (7/7), 完成.
 使用 8 个线程进行压缩
@@ -263,7 +267,7 @@ Git鼓励大量使用分支：
 
 ```bash
 kzj@linux:~/Github/kuaizaijun.github.io$ git tag a.branch
-kzj@linux:~/Github/kuaizaijun.github.io$ git tag -d tag branch 
+kzj@linux:~/Github/kuaizaijun.github.io$ git tag -d tag branch
 已删除标签 'tag'（曾为 e92a402）
 已删除标签 'branch'（曾为 e92a402）
 ```
@@ -271,7 +275,7 @@ kzj@linux:~/Github/kuaizaijun.github.io$ git tag -d tag branch
 >用标签查看版本信息
 
 ```bash
-zj@linux:~/Github/kuaizaijun.github.io$ git show a.branch 
+zj@linux:~/Github/kuaizaijun.github.io$ git show a.branch
 commit e92a4021720aa029b49978da1b217d09cde68821 (tag: tag, tag: branch, tag: a.branch)
 Author: kuaizaijun <kuaizaijun@qq.com>
 Date:   Tue Jan 19 21:23:06 2021 +0800
@@ -289,7 +293,7 @@ index 050d11e..b5b18ca 100644
 >推送标签、删除远程标签
 
 ```bash
-kzj@linux:~/Github/kuaizaijun.github.io$ git push origin --tags 
+kzj@linux:~/Github/kuaizaijun.github.io$ git push origin --tags
 总共 0 （差异 0），复用 0 （差异 0）
 To github.com:KuaizaiJun/kuaizaijun.github.io.git
  * [new tag]         a.branch -> a.branch
